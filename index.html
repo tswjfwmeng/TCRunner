@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>T.C. Runner</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script type="text/javascript" src="travel_calculator.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+
+<body>
+  <div class="logo">
+    <i class="fab fa-studiovinari"></i>
+    <a href="index.html">T.C Runner</a>
+  </div>
+  <div id="banner">
+    <img src="images/two-men-hiking-mountains.jpg" alt="T.C. Runner Banner" id="banner_img">
+      <div id="banner_text">
+        <i class="fab fa-studiovinari" style="font-size: 45px"></i>
+        <a href="index.html">T.C. Runner</a>
+      </div>
+  </div>
+  <!--Banner img and banner link ends here-->
+  </br>
+  </br>
+    <div class="container-fluid">
+      <form id="travel_calculator_form" name="travel_calculator_form" method="post">
+        <div id="travel_calculator" class="row row-eq-height">
+          <div id="common_costs" class="col-sm-4 order-sm-4 pb-5 pt-3">
+            <img src="images/travel-1.jpg" alt="Traveling" class="img_center_1">
+              <h3>Common</h3>
+              </br>
+              <div>
+                <div class="box_1">
+                  <i class="fas fa-blind" style="font-size: 25px"></i>
+                  <label for="pay_rate" >Pay Rate</label> </br>
+                  <input type="number" name="pay_rate" id="pay_rate" size="50%" min="0" value="0"> </br>
+                  </br>
+                </div> </br>
+                <div class="box_1">
+                  <i class="fas fa-users" style="font-size: 25px"></i>
+                  <label for="travelers">How Many People?</label> </br>
+                  <input type="number" name="travelers"  id="travelers" min="1" value="1"> </br>
+                  </br>
+                </div> </br>
+                <div class="box_1">
+                  <i class="fas fa-utensils" style="font-size: 25px"></i>
+                  <label for="food_cost">Food Cost (per person)</label> </br>
+                  <input type="number" name="food_cost" id="food_cost" min="0" value="0"> </br>
+                  </br>
+                </div> </br>
+                <div class="box_1">
+                  <i class="fas fa-headphones" style="font-size: 25px"></i>
+                  <label for="audio_users">Streaming Audio</label> </br>
+                  <input type="number" name="audio_users" id="audio_users" min="0" value="0"> </br>
+                  <input type="hidden" name="audio_rate" id="audio_rate" value="0.1">
+                  </br>
+                  <i class="fas fa-mobile-alt" style="font-size: 25px"></i>
+                  <label for="video_users">Streaming Videos</label> </br>
+                  <input type="number" name="video_users" id="video_users" min="0" value="0"> </br>
+                  <input type="hidden" name="video_rate" id="video_rate" value="0.5">
+                  </br>
+                  <i class="fas fa-chart-line" style="font-size: 25px"></i>
+                  <label for="data_cap">Monthly Data Cap (Gigabytes)</label> </br>
+                  <input type="number" name="data_cap"  id="data_cap" min="0" value="10"> </br>
+                  </br>
+                </div> </br>
+                <div class="box_1">
+                  <div class="col-12">
+                </div>
+                <div id="overage_fee_box">
+                  <i class="fas fa-chart-line" style="font-size: 25"></i>
+                  <h4>Overage</h4>
+                  <label class="h6">
+                  <input type="radio" name="plan_overage" value="0" id="overage_rate_0">Free</label>
+                  <label class="h6">
+                  <input type="radio" name="plan_overage" value="5" id="overage_rate_1">$5/GB</label>
+                  <label class="h6">
+                  <input type="radio" name="plan_overage" value="10" id="overage_rate_2" checked>$10/GB</label>
+                  <label class="h6">
+                  <input type="radio" name="plan_overage" value="15" id="overage_rate_3">$15/GB</label>
+                  <label class="h6">
+                  <input type="radio" name="plan_overage" value="20" id="overage_rate_4">$20/GB</label>
+                </br>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div id="car_related_costs" class="col-sm-4 order-sm-1 pb-5 pt-3">
+              <img src="images/car-family.jpg" alt="Family Camping" class="img_center_1">
+              <h3>Automobile</h3>
+              </br>
+                <div class="box_1">
+                  <i class="fas fa-motorcycle" style="font-size: 25px"></i>
+                  <label for="car_distance">Distance</label> </br>
+                  <input type="number" name="car_distance" id="car_distance" min="0" value="500"> </br>
+                  <input type="hidden" name="maximum_daily_car_distance" id="maximum_daily_car_distance" value="560">
+                  <input type="hidden" name="wear_per_mile" id="wear_per_mile" value="0.05">
+                  </br>
+                  <i class="fab fa-hotjar" style="font-size: 25px"></i>
+                  <label for="mpg">Miles Per Gallon</label> </br>
+                  <input type="number" name="mpg" id="mpg" min="0" value="25"> </br>
+                  </br>
+                  <i class="fas fa-database" name="font-size: 25px"></i>
+                  <label for="ppg">Price Per Gallon</label> </br>
+                  <input type="number" name="ppg" id="ppg" min="0" value="2.50"> </br>
+                  </br>
+                </div> </br>
+                <div class="box_1">
+                  <i class="fas fa-bed" style="font-size: 25px"></i>
+                  <label for="rent_per_night">Rent Per Night</label> </br>
+                  <input type="number" name="rent_per_night" id="rent_per_night" min="0" value="150"> </br>
+                  </br>
+                  <i class="fas fa-dollar-sign" style="font-size: 25px"></i>
+                  <label for="car_discount">Discount</label> </br>
+                  <input type="number" name="car_discount" id="car_discount" min="0" value="0"> </br>
+                  </br>
+                  <i class="fas fa-car" style="font-size: 25px"></i>
+                  <label for="parking_per_day">Parking Per Day</label> </br>
+                  <input type="number" name="parking_per_day" id="parking_per_day" min="0" value="0"> </br>
+                  </br>
+                </div>
+            </div>
+            <div id="flight_related_costs" class="col-sm-4 order-sm-8 pb-5 pt-3">
+              <img src="images/balloon-flight-2.jpg" alt="Airplane" class="img_center_1">
+              <h3>Flight</h3>
+              </br>
+              <div class="box_1">
+                <i class="fas fa-paper-plane" style="font-size:25px"></i>
+                <label for="flight_distance">Distance</label> </br>
+                <input type="number" name="flight_distance" id="flight_distance" min="0" value="500"> </br>
+                <input type="hidden" name="flight_speed" id="flight_speed" value="575">
+                <input type="hidden" name="airport_hours" id="airport_hours" value="2.5">
+                </br>
+                <i class="fas fa-dollar-sign" style="font-size: 25px"></i>
+                <label for="flight_ticket_cost">Ticket Cost</label> </br>
+                <input type="number" name="flight_ticket_cost" id="flight_ticket_cost" min="0" value="0"> </br>
+                </br>
+                <i class="fas fa-suitcase" style="font-size: 25px"></i>
+                <label for="checked_bags">Bags</label> </br>
+                <input type="number" name="checked_bags" id="checked_bags" min="0" value="1"> </br>
+                <input type="hidden" name="cost_per_bag" id="cost_per_bag" value="50">
+                </br>
+                <i class="fas fa-bus" style="font-size: 25px"></i>
+                <label for="transit_cost">Transit Cost (to/from airport)</label> </br>
+                <input type="number" name="transit_cost" id="transit_cost" min="0" value="0"> </br>
+                </br>
+              </div> </br>
+              <div class="box_1">
+                <i class="fas fa-dollar-sign" style="font-size: 25px"></i>
+                <label for="flight_discount">Discount</label> </br>
+                <input type="number" name="flight_discount" id="flight_discount" min="0" value="0"> </br>
+                </br>
+              </div> </br>
+              <div class="box_1">
+                <div class="col-12">
+                  <h4>Airport</h4>
+                </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="airport_amenities" id="airport_amenities_0" class="form-check-input" value="10">
+                  <label class="h6 form-check-label">Airport Wifi $10  </label> </br>
+                  <input type="checkbox" name="airport_amenities" id="airport_amenities_1" class="form-check-input" value="10">
+                  <label class="h6 form-check-label">Food/Beverages $10  </label>
+                </div>
+              </div> </br>
+              <div class="box_1">
+                <!--<i class="fas fa-utensils" style="font-size: 25px"></i>-->
+                <div>
+                  <div class="col-12">
+                    <h4>In-Flight</h4>
+                  </div>
+                  <div class="checkbox">
+                    <input type="checkbox" name="in_flight_amenities" id="in_flight_amenities_0" class="form-check-input" value="10">
+                    <label class="h6 form-check-label">Food/Beverage $10   </label> </br>
+                  </div>
+                  <div class="checkbox">
+                    <input type="checkbox" name="in_flight_amenities" id="in_flight_amenities_1" class="form-check-input" value="20">
+                    <label class="h6 form-check-label">WiFi $20   </label> </br>
+                  </div>
+                  <div class="checkbox">
+                    <input type="checkbox" name="in_flight_amenities" id="in_flight_amenities_2" class="form-check-input" value="10">
+                    <label class="h6 form-check-label">Audio Equipment $10   </label> </br>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+          <div class="fixed-bottom">
+            <div class="container">
+              <button type="button" class="btn btn-primary btn-lg btn-block" id="update_button" autofocus>Update</button>
+            </div>
+          </div>
+    </form>
+  </div>
+  <div id="results"></div>
+</body>
+
+</html>
